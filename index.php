@@ -41,14 +41,15 @@
       background-color: #f6f6f6;
   }
   .logo-small {
-      color: #FF5A5F; /*f4511e*/;
+      color: #FF5A5F; /*f4511e*/
       font-size: 50px;
   }
   .logo {
-      color: #FF5A5F; /*f4511e*/;
+      color: #FF5A5F; /*f4511e*/
       font-size: 200px;
   }
-  .thumbnail {
+
+ /* .thumbnail {
       padding: 0 0 15px 0;
       border: none;
       border-radius: 0;
@@ -57,16 +58,16 @@
       width: 100%;
       height: 100%;
       margin-bottom: 10px;
-  }
+  }*/
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #FF5A5F; /*f4511e*/;
+      color: #FF5A5F; 
   }
   .carousel-indicators li {
-      border-color: #FF5A5F; /*f4511e*/;
+      border-color: #FF5A5F; 
   }
   .carousel-indicators li.active {
-      background-color: #FF5A5F; /*f4511e*/;
+      background-color: #FF5A5F; 
   }
   .item h4 {
       font-size: 19px;
@@ -79,7 +80,7 @@
       font-style: normal;
   }
   .panel {
-      border: 1px solid #FF5A5F; /*f4511e*/; 
+      border: 1px solid #FF5A5F; 
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -87,13 +88,13 @@
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-      border: 1px solid #FF5A5F; /*f4511e*/
+      border: 1px solid #FF5A5F; 
       background-color: #fff !important;
-      color: #FF5A5F; /*f4511e*/;
+      color: #FF5A5F; 
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #FF5A5F !important; /*f4511e*/
+      background-color: #FF5A5F !important; 
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -113,12 +114,12 @@
   }
   .panel-footer .btn {
       margin: 15px 0;
-      background-color: #FF5A5F; /*f4511e*/
+      background-color: #FF5A5F; 
       color: #fff;
   }
   .navbar {
       margin-bottom: 0;
-      background-color: #FF5A5F; /*f4511e*/
+      background-color: #FF5A5F; 
       z-index: 9999; 
       border: 0;
       font-size: 12px !important;
@@ -188,95 +189,93 @@
   }
 
 /* https://developers.google.com/maps/documentation/javascript/examples/places-searchbox */
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-      }
+/* Always set the map height explicitly to define the size of the div element that contains the map. */
+  #map {
+    height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
 
-      #infowindow-content .title {
-        font-weight: bold;
-      }
+  #infowindow-content .title {
+    font-weight: bold;
+  }
 
-      #infowindow-content {
-        display: none;
-      }
+  #infowindow-content {
+    display: none;
+  }
 
-      #map #infowindow-content {
-        display: inline;
-      }
+  #map #infowindow-content {
+    display: inline;
+  }
 
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-      }
+  .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+  }
 
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
 
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
 
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
 
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
 
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      #target {
-        width: 345px;
-      }
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+  #target {
+    width: 345px;
+  }
 /* end */
+
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <?php
-//use isset for everything
-//research optimizations
 
 /** 
   * Convert data from a JSON file into a PHP object
@@ -301,142 +300,12 @@ function getData($filename) {
 
     $data = json_decode($data);
     return $data;
-
 }
 
-/**
- * Calculates the great-circle distance between two points, with
- * the Haversine formula. Credits: https://stackoverflow.com/questions/10053358/measuring-the-distance-between-two-coordinates-in-php
- * @param float $latitudeFrom Latitude of start point in [deg decimal]
- * @param float $longitudeFrom Longitude of start point in [deg decimal]
- * @param float $latitudeTo Latitude of target point in [deg decimal]
- * @param float $longitudeTo Longitude of target point in [deg decimal]
- * @param float $earthRadius Mean earth radius in [m]
- * @return float Distance between points in [m] (same as earthRadius)
- */
-function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius =6371000)
-{
-  // convert from degrees to radians
-  $latFrom = deg2rad($latitudeFrom);
-  $lonFrom = deg2rad($longitudeFrom);
-  $latTo = deg2rad($latitudeTo);
-  $lonTo = deg2rad($longitudeTo);
-
-  $latDelta = $latTo - $latFrom;
-  $lonDelta = $lonTo - $lonFrom;
-
-  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
-    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
-  return $angle * $earthRadius;
-}
-
-/**
-* Get the nearest locations to a given latitude and longitude
-* @param $lat1 the latitude
-* @param $lon1 the longitude
-* @param $listings an array of listings
-* @param $size the number of nearest locations to get
-* @return an array of the nearest locations
-*/
-function nearestLocations($lat1, $lon1, $listings, $size) { 
-  //array of closest objects
-  $closest = [];
-  for ($i = 0; $i < count($listings); $i++) {
-    $lat = $listings[$i]->latitude;
-    $lon = $listings[$i]->longitude;
-    $dist = haversineGreatCircleDistance($lat1, $lon1, $lat, $lon);
-    if (count($closest) < $size and $dist != 0) {
-      $closest[$dist] = $listings[$i];
-    } else if ($dist != 0) {
-      $closest = compareDist($closest, $dist, $listings[$i]);
-    }
-  }
-  return $closest;
-}
-
-/**
- * Destructively modify the closest array to remove/replace the current farthest location in the array with a nearer one
- * @param $closest the current location you are comparing
- * @param $dist the distance between closest and listing
- * @param $listing the location you are comparing against closest
- * @return the modified array of closest locations
-*/
-function compareDist($closest, $dist, $listing) {
-  $maxDist = max(array_keys($closest)); //get farthest city from closest
-  if ($dist < $maxDist) {
-    unset($closest[$maxDist]); //remove and replace with the closer city
-    $closest[$dist] = $listing;
-  }
-  return $closest;
-}
-
-/**
-  * Calculate average price for a list of listings
-  * @param $listings an array of listing objects
-  * @param $nights the number of nights to average
-  * @param $assoc whether the array is associative or not, default true
-  * @return the average price
-*/
-function avgPrice($listings, $nights, $assoc=true) {
-  $sum = 0;
-  $total = count($listings);
-  if ($assoc) {
-    foreach ($listings as $key=> $val) {
-      $sum += dollarToNumber($val->price);
-    }
-  } else {
-    foreach($listings as $val) {
-      $sum += dollarToNumber($val->price);
-    }
-  }
-
-  return round(($sum / $total) * $nights, 2);
-
-}
-
-/**
-* Calculate the ideal price by averaging the values of an array of listings and their number of reviews
-* @param $listings an array of key value pairs where the value contains the listing and price
-* @return the ideal price
-*/
-function idealPrice($listings, $assoc=true) {
-  $sum = 0;
-  $total = 0;
-  if ($assoc) {
-    foreach ($listings as $key=> $val) {
-      $sum += dollarToNumber($val->price) * $val->number_of_reviews;
-      $total += $val->number_of_reviews + 1; //prevent total from being 0
-    }
-  } else {
-    foreach($listings as $val) {
-      $sum += dollarToNumber($val->price) * $val->number_of_reviews;
-      $total += $val->number_of_reviews + 1; //prevent total from being 0
-    }
-  }
-  return round($sum / $total, 2);
-}
-
-/** 
-* Strip dollar signs and convert dollar string to a number 
-* @param $dollar the dollar to convert
-* @return the number value of the dollar string
-*/
-function dollarToNumber($dollar) {
-  return floatval(ltrim($dollar, '$'));
-}
-
-function main() {
-  $listings = getData("listings_all.json");
-  $closest = nearestLocations($listings[4]->latitude, $listings[4]->longitude, $listings, 10);
-  $price = avgPrice($closest, 7);
-  echo "Optimal price: $".$price;
-}
-
-//main();
 //global variables for graphing data
 $scatter = getData("scatter.json");
 $amenities = getData("amenities.json");
-$reviews = getData("review_bar.json")
+$reviews = getData("review_bar.json");
 
 ?>
 
@@ -463,7 +332,7 @@ $reviews = getData("review_bar.json")
 
 <div class="jumbotron text-center">
   <h1>Airbnb for Hosts</h1> 
-  <p>We specialize in blablabla</p> 
+  <p></p> 
 </div>
 
 <!-- Container (About Section) -->
@@ -471,12 +340,11 @@ $reviews = getData("review_bar.json")
   <div class="row">
     <div class="col-sm-8">
       <h2>About Company Page</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      <h4>Hosting Airbnb guests in your home can be an easy way to make extra money. That's especially true in San Francisco, where finding an affordable hotel or hostel can be difficult. Here at Airbnb for Hosts, we want to help new hosts figure out how to set the perfect price for their home and capitalize on new trends.</h4><br>
+      <p>We offer a few tools to help you set up the perfect listing. View recent data of all listings in San Francisco with pricing, reviews, and more, including comparisons of the pricing of listings and number of people accommodated, the most offered amenities by hosts so far, and what people are looking for based on data collected from thousands of reviews. Also use our simple pricing tools to estimate the average weekly income you can make or calculate the ideal price per night to maximize bookings -- all you need is a geo-location!</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+      <span class="glyphicon glyphicon-home logo" style="margin-left: 30%;"></span>
     </div>
   </div>
 </div>
@@ -484,65 +352,96 @@ $reviews = getData("review_bar.json")
 <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+      <span class="glyphicon glyphicon-stats logo slideanim"></span>
     </div>
     <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2>HOW WE DO IT</h2><br>
+      <h4><strong>METHODS:</strong> To visualize the data, we relied on server-side PHP processing and the Google Charts API. To perform price estimation, we find the ten nearest listings to the given geo-location and average their prices. We also take into account a location's number of reviews when determining how to maximize bookings.</h4><br>
+      <p><strong>NOTE:</strong> For a more detailed description of the implementation, please feel free to take a look at the source code and read more <a href="https://github.com/ylkao/airbnb-host.git">here.</a></p>
     </div>
   </div>
 </div>
 
 <!-- Container (Data Section) -->
 <div id="data" class="container-fluid text-center bg-grey">
-  <h2>Data</h2><br>
+  <h2>Data</h2>
   <h4>What other hosts are doing</h4>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
+     <!--Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+    <!--Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        var pie = <?php echo json_encode($amenities); ?>;
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable(pie);
-          var options = {
-            title: 'Available Amenities',
-            is3D: true,
-          };
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+          google.charts.load("current", {packages:["corechart"]});
+          google.charts.setOnLoadCallback(drawChart);
+          var pie = <?php echo json_encode($amenities); ?>;
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable(pie);
+            var options = {
+              title: 'Available Amenities',
+              is3D: true,
+              width: 800,
+              height: 500
+            };
 
-          var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-          chart.draw(data, options);
-        }
-      </script>
-      <div id="piechart_3d" style="width: 800px; height: 500px; position: center;"></div> <!--   -->
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="piechart_3d" style="width: 800px; height: 530px; margin: auto;"></div>   
       </div>
+
       <div class="item">
-      <script type="text/javascript">
-        var scatter = <?php echo json_encode($scatter); ?>;
-        
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+        <div id="barchart_values" style="width: 800px; height: 500px; margin: auto;"></div>
+        <script>
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable(scatter);
+            var bar = <?php echo json_encode($reviews); ?>;
+            function drawChart() {
 
-          var options = {
-            title: 'Number of People Accommodated vs. Price comparison',
-            hAxis: {title: 'Number of People Accomodated', minValue: 0, maxValue: 17},
-            vAxis: {title: 'Price in Dollars', minValue: 0, maxValue: 1100},
-            legend: 'none'
+              var data = google.visualization.arrayToDataTable(bar);
+
+              var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1]);
+
+              var options = {
+                title: "Most Frequently Used Words in Reviews",
+                width: 800,
+                height: 500,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+              };
+              var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+              chart.draw(view, options);
+          }
+        </script>
+      </div>
+
+  <div class="item">
+    <script type="text/javascript">
+      var scatter = <?php echo json_encode($scatter); ?>;
+      
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(scatter);
+
+        var options = {
+          title: 'Number of People Accommodated vs. Price comparison',
+          hAxis: {title: 'Number of People Accomodated', minValue: 0, maxValue: 17},
+          vAxis: {title: 'Price in Dollars', minValue: 0, maxValue: 1100},
+          width: 800,
+          height: 500,
+          legend: 'none'
         };
 
         var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
@@ -550,39 +449,11 @@ $reviews = getData("review_bar.json")
         chart.draw(data, options);
       }
     </script>
-    <div id="chart_div" style="width: 800px; height: 500px; position: center;"></div> 
-   </div>
-      <div class="item">
-       <!--Barchart -->
-<div id="barchart_values" style="width: 800px; height: 500px;"></div>
+    <div id="chart_div" style="width: 800px; height: 500px; margin: auto;"></div>
+  </div>
+</div>
 
-<script>
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-
-    var bar = <?php echo json_encode($reviews); ?>;
-    function drawChart() {
-
-      var data = google.visualization.arrayToDataTable(bar);
-
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1]);
-
-      var options = {
-        title: "Most Frequently Used Words in Reviews",
-        width: 800,
-        height: 800,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
-      };
-      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-      chart.draw(view, options);
-  }
-</script>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
+     <!--Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -619,7 +490,7 @@ $reviews = getData("review_bar.json")
   </div>
 </div>
 
-<!-- Container (Data Section) -->
+
 <div id="services" class="container-fluid text-center">
   <h2>Services</h2><br>
   <h4>What we offer</h4>
@@ -664,7 +535,43 @@ $reviews = getData("review_bar.json")
           </script>
         </div>
       </div>      
-    </div>     
+    </div> 
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Popularity</h1>
+        </div>
+        <div class="panel-body">
+          <p>Enter a valid zipcode in San Francisco to see its average rating! <br><strong>BONUS:</strong> The most popular neighborhood is the Financial District (zipcode: 94104) with an average rating of 97.33.</p>
+        </div>
+        <div class="panel-footer"><br>
+          <input class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode" required>
+          <button class="btn btn-lg" id="popularity" type="submit" onclick="calcPopularity()">See Average Rating</button>
+
+          <p id="popularity_result"></p>
+          <script>
+
+          /** Calculate the estimated weekly income using AJAX */
+          function calcPopularity() {
+            document.getElementById("popularity").innerHTML = "Loading...";
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("popularity_result").innerHTML = this.responseText;
+                document.getElementById("popularity").innerHTML = "See Average Rating";
+              }
+            };
+            var zip = document.getElementById("zipcode").value;
+            xhttp.open("GET", "calcPopularity.php?zipcode="+zip, true);
+            xhttp.send();
+          }
+
+          </script>
+        </div>
+      </div>      
+    </div> 
+
     <div class="col-sm-4 col-xs-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -701,21 +608,7 @@ $reviews = getData("review_bar.json")
         </div>
       </div>      
     </div>       
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Calculate</button>
-        </div>
-      </div>      
-    </div>    
+   
   </div>
 </div>
 

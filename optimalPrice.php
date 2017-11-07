@@ -104,13 +104,16 @@ function idealPrice($listings, $assoc=true) {
   if ($assoc) {
     foreach ($listings as $key=> $val) {
       $sum += dollarToNumber($val->price) * $val->number_of_reviews;
-      $total += $val->number_of_reviews + 1; //prevent total from being 0
+      $total += $val->number_of_reviews;
     }
   } else {
     foreach($listings as $val) {
       $sum += dollarToNumber($val->price) * $val->number_of_reviews;
-      $total += $val->number_of_reviews + 1; //prevent total from being 0
+      $total += $val->number_of_reviews;
     }
+  }
+  if ($total == 0) {
+    return round($sum, count($listings), 2); //prevent division by 0 
   }
   return round($sum / $total, 2);
 }
