@@ -8,270 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: #818181;
-  }
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #303030;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  .jumbotron {
-      background-color: #FF5A5F;
-      color: #fff;
-      padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  .bg-grey {
-      background-color: #f6f6f6;
-  }
-  .logo-small {
-      color: #FF5A5F; /*f4511e*/
-      font-size: 50px;
-  }
-  .logo {
-      color: #FF5A5F; /*f4511e*/
-      font-size: 200px;
-  }
 
- /* .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }*/
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #FF5A5F; 
-  }
-  .carousel-indicators li {
-      border-color: #FF5A5F; 
-  }
-  .carousel-indicators li.active {
-      background-color: #FF5A5F; 
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel {
-      border: 1px solid #FF5A5F; 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #FF5A5F; 
-      background-color: #fff !important;
-      color: #FF5A5F; 
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #FF5A5F !important; 
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #FF5A5F; 
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #FF5A5F; 
-      z-index: 9999; 
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #FF5A5F !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
-  footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #FF5A5F; /*f4511e*/;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
+  <link href="airbnbhost.css" rel="stylesheet">
 
-/* https://developers.google.com/maps/documentation/javascript/examples/places-searchbox */
-/* Always set the map height explicitly to define the size of the div element that contains the map. */
-  #map {
-    height: 100%;
-  }
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  #infowindow-content .title {
-    font-weight: bold;
-  }
-
-  #infowindow-content {
-    display: none;
-  }
-
-  #map #infowindow-content {
-    display: inline;
-  }
-
-  .pac-card {
-    margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    font-family: Roboto;
-  }
-
-  #pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-  }
-
-  .pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
-  }
-
-  .pac-controls label {
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 300;
-  }
-
-  #pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 400px;
-  }
-
-  #pac-input:focus {
-    border-color: #4d90fe;
-  }
-
-  #title {
-    color: #fff;
-    background-color: #4d90fe;
-    font-size: 25px;
-    font-weight: 500;
-    padding: 6px 12px;
-  }
-  #target {
-    width: 345px;
-  }
-/* end */
-
-</style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -330,9 +69,21 @@ $reviews = getData("review_bar.json");
   </div>
 </nav>
 
-<div class="jumbotron text-center">
+<!--<div class="jumbotron text-center">
   <h1>Airbnb for Hosts</h1> 
   <p></p> 
+</div>-->
+
+<div id="slide1" class="splash noselect"
+  data-center="background-position: 47% 90%;opacity:1.5;"
+  data-top-bottom="opacity:0;"
+  data-anchor-target="#slide1">
+
+  <div class="flex-wrapper">
+    <h1 class="main-title">
+    Airbnb for Hosts
+    </h1>
+  </div>
 </div>
 
 <!-- Container (About Section) -->
@@ -360,6 +111,13 @@ $reviews = getData("review_bar.json");
       <p><strong>NOTE:</strong> For a more detailed description of the implementation, please feel free to take a look at the source code and read more <a href="https://github.com/ylkao/airbnb-host.git">here.</a></p>
     </div>
   </div>
+</div>
+
+
+<div id="slide2" class="secondSplash">
+  <h1 class="second-title noselect">
+    Make the most out of your home
+  </h1>
 </div>
 
 <!-- Container (Data Section) -->
@@ -488,6 +246,10 @@ $reviews = getData("review_bar.json");
     </script>
 
   </div>
+</div>
+
+<div id="slide3" class="thirdSplash">
+  <h1 class="third-title noselect">Try out our services</h1>
 </div>
 
 
@@ -689,6 +451,11 @@ $reviews = getData("review_bar.json");
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtzZ5LFA8CakJU9qamVTPafXKxGn21U4A&libraries=places&callback=initAutocomplete"
          async defer></script>
+
+<div id="slide4" class="fourthSplash">
+  <h1 class="fourth-title noselect">Get in touch</h1>
+</div>
+
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
