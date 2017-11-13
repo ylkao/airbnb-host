@@ -5,45 +5,45 @@ OVERVIEW <br />
 I used JavaScript, Bootstrap, and PHP to create a website, Airbnb for Hosts, to visualize the data and perform price estimation, bookings optimization, and popularity calculations. I wrote several PHP scripts to process the data we were given and generate JSON files ready-for-use, so I wouldn't have to do the calculations every time the page loaded. I then used Bootstrap for the layout of the website and JavaScript to do animations, display the data as Google Charts, and process PHP forms and input.
 
 DELIVERABLES <br />
-Visualize the data: see DATA section of website
--Pie chart of Available Amenities: top 10 most listed amenities and their frequency
--Bar chart of Most Frequently Used Words in Reviews: most used words and their frequency, excludes small and irrelevant words like "I", "a", "San Francisco", "room", etc.
--Scatter plot of Number of People Accommodated vs, Price: number of people that can be accommodated given a certain listing and the listing's price in dollars 
-Price Estimation: see SERVICES section of website
--Calculates the estimated weekly income by finding the nearest locations, multiplying price by number of reviews per week, and taking the average
--Assumptions: number of reviews = number of bookings
--One month = 4 weeks (divided reviews per month by 4 to get reviews/bookings per week)
-Bookings Optimization: see SERVICES section of website
--Calculates the ideal price per night to maximize bookings by finding the nearest locations, multiplying price by number of reviews, and taking the average 
--Assumptions: number of reviews = number of bookings
--Reasoning: use nearby locations, the ones with the most number of bookings should be weighted more
+1. Visualize the data: see DATA section of website 
+- Pie chart of Available Amenities: top 10 most listed amenities and their frequency
+- Bar chart of Most Frequently Used Words in Reviews: most used words and their frequency, excludes small and irrelevant words like "I", "a", "San Francisco", "room", etc.
+- Scatter plot of Number of People Accommodated vs, Price: number of people that can be accommodated given a certain listing and the listing's price in dollars 
+2. Price Estimation: see SERVICES section of website
+- Calculates the estimated weekly income by finding the nearest locations, multiplying price by number of reviews per week, and taking the average
+- Assumptions: number of reviews = number of bookings
+- One month = 4 weeks (divided reviews per month by 4 to get reviews/bookings per week)
+3. Bookings Optimization: see SERVICES section of website
+- Calculates the ideal price per night to maximize bookings by finding the nearest locations, multiplying price by number of reviews, and taking the average 
+- Assumptions: number of reviews = number of bookings
+- Reasoning: use nearby locations, the ones with the most number of bookings should be weighted more
 
 BONUS <br />
-Animate:
--see DATA section "carousel" of charts
+1. Animate: 
+- see DATA section "carousel" of charts
 glyphicon images and service tool boxes slide in upon first loading the web page
-Investment: ​see DATA->BONUS subsection
--Calculates the best place to invest $100 million using value (based off price and number of reviews) and estimated monthly income (similar to price estimation)
--Assumption: median home price in San Francisco is $841,600
-Popularity: see DATA->BONUS subsection
--Calculates the most popular neighborhood in San Francisco based off of review_ratings or the zipcode with the highest average rating
--Note: ignored negligible amount of listings without a zipcode and single Chicago listing
--Found the neighborhood based off of zipcode
+2. Investment: see DATA->BONUS subsection
+ -Calculates the best place to invest $100 million using value (based off price and number of reviews) and estimated monthly income (similar to price estimation)
+- Assumption: median home price in San Francisco is $841,600
+3. Popularity: see DATA->BONUS subsection
+- Calculates the most popular neighborhood in San Francisco based off of review_ratings or the zipcode with the highest average rating
+- Note: ignored negligible amount of listings without a zipcode and single Chicago listing
+- Found the neighborhood based off of zipcode
 
 See more details below.
 
 BACK-END <br />
 
 Getting the Data <br />
-listings_all.json: Initially, I tried to download all the data at once and had trouble compressing everything into a file that wouldn't crash my computer. To create listings_all.json, containing all the listings, I first deleted all information I wouldn't be using and then used an online converter, http://www.convertcsv.com/csv-to-json.htm to create  a JSON file from the CSV file. 
-reviews_clean.txt: I wanted to count the most frequently used words in reviews so hosts would have a better idea of what guests are looking for. To do this, I needed to create a large string of all the reviews and process that string. Reading from a csv file lead to memory issues with my code, so I first used Excel to remove small words, verbs, and irrelevant words  like, "I, the, is, am, San Francisco, etc." and reduce the file size. I then copied and pasted everything into a .txt file and used PHP to process it.
-reviews.json, amenities.json, ratings.json, price_people.json, words.json: Holds all the data needed for quick processing on the live website. See below for more information.
+- listings_all.json: Initially, I tried to download all the data at once and had trouble compressing everything into a file that wouldn't crash my computer. To create listings_all.json, containing all the listings, I first deleted all information I wouldn't be using and then used an online converter, http://www.convertcsv.com/csv-to-json.htm to create  a JSON file from the CSV file. 
+- reviews_clean.txt: I wanted to count the most frequently used words in reviews so hosts would have a better idea of what guests are looking for. To do this, I needed to create a large string of all the reviews and process that string. Reading from a csv file lead to memory issues with my code, so I first used Excel to remove small words, verbs, and irrelevant words  like, "I, the, is, am, San Francisco, etc." and reduce the file size. I then copied and pasted everything into a .txt file and used PHP to process it.
+- reviews.json, amenities.json, ratings.json, price_people.json, words.json: Holds all the data needed for quick processing on the live website. See below for more information.
 
 Creating the Data <br />
-price_people.php: This PHP script generates the data needed for the scatter chart of number of people accommodated vs. price per night. I iterated through all the listings in listings_all.json and created an array of array pairs to hold the "accommodates" and "price" information. I then stored this array in price_people.json for website use.
-amenities.php: This PHP script generates the data needed for the pie chart of the amenities and the frequency at which they show up in listings. I iterated through all the listings in listings_all.json, and for each listing, I converted the string of amenities into an array. Then, for each amenity, I added it into an associative array mapping the name of the amenity to a starting frequency of 1, or if it was already in the array, I incremented the frequency count. I then took the top 10 most frequent amenities and stored those as an array in amenities.json for website use.
-reviews.php: This PHP script generates the data needed for the reviews bar chart of words to frequency on the website. I read data from reviews_clean.txt line by line to avoid memory issues, and I split each line into an array of words. For each word, I added it to an associative array mapping the word to a starting frequency of 1, or it it was already in the array, I incremented the frequency count. I then took the top 24 most frequently used words and stored that data in reviews.json for website use.
-ratings.php: This PHP script generates the data needed to calculate the average rating based on zipcode. I iterated through all the listings in listings_all.json and used an associative array to map zipcode to the average rating in that zipcode. To do this, I first mapped zipcode to an array containing all the "review_scores_rating" for each listing in that zipcode. I then used the array_sum and count function to average the value for that array and get the average rating. I excluded listings that did not have a zipcode, of which there were about 110, since I deemed them inconsequential out of the 8500+ listings available. I also noticed a Chicago zipcode in my array and removed that as well, since I only wanted to focus on San Francisco. Finally, I stored this array in ratings.json for website use.
+- price_people.php: This PHP script generates the data needed for the scatter chart of number of people accommodated vs. price per night. I iterated through all the listings in listings_all.json and created an array of array pairs to hold the "accommodates" and "price" information. I then stored this array in price_people.json for website use.
+- amenities.php: This PHP script generates the data needed for the pie chart of the amenities and the frequency at which they show up in listings. I iterated through all the listings in listings_all.json, and for each listing, I converted the string of amenities into an array. Then, for each amenity, I added it into an associative array mapping the name of the amenity to a starting frequency of 1, or if it was already in the array, I incremented the frequency count. I then took the top 10 most frequent amenities and stored those as an array in amenities.json for website use.
+- reviews.php: This PHP script generates the data needed for the reviews bar chart of words to frequency on the website. I read data from reviews_clean.txt line by line to avoid memory issues, and I split each line into an array of words. For each word, I added it to an associative array mapping the word to a starting frequency of 1, or it it was already in the array, I incremented the frequency count. I then took the top 24 most frequently used words and stored that data in reviews.json for website use.
+- ratings.php: This PHP script generates the data needed to calculate the average rating based on zipcode. I iterated through all the listings in listings_all.json and used an associative array to map zipcode to the average rating in that zipcode. To do this, I first mapped zipcode to an array containing all the "review_scores_rating" for each listing in that zipcode. I then used the array_sum and count function to average the value for that array and get the average rating. I excluded listings that did not have a zipcode, of which there were about 110, since I deemed them inconsequential out of the 8500+ listings available. I also noticed a Chicago zipcode in my array and removed that as well, since I only wanted to focus on San Francisco. Finally, I stored this array in ratings.json for website use.
 
 Processing the Data <br />
 price_estimation.php: Price estimation. This PHP script calculates the weekly average income the homeowner can make with Airbnb given a geo-location (latitude and longitude) from user-entered input from the webpage, index.php, I first validate the input by making sure it is numeric, then I create an array of the 10 nearest locations by iterating through all the listings in listings_all.json, calculating their distance using the haversine formula, and updating the array as needed with the listings that have the shortest distance from the given geo-location. I then iterate through the array of the 10 nearest locations and find their price per night and number of bookings per week using reviews_per_month, as I assumed number of reviews = number of bookings. My reasoning overall was to base my price off of nearby locations, calculate their average income based off price and number of bookings, and use this as my estimate.
