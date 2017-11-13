@@ -41,7 +41,7 @@ function getData($filename) {
 function countCleaned() {
   $txt = file_get_contents("reviews_clean.txt");
   $counts = [];
-  $excluded = ["San", "Francisco", "The", "place", "room", "rooms", " ", "", "\r\n"];
+  $excluded = ["San", "Francisco", "The", "place", "room", "rooms", " ", "", "\r\n", "SF", "definitely", "all", "apartment", "host", "here", "-", "made", "Great"];
   //large file, read line by line
   $handle = fopen("reviews_clean.txt", "r");
   if ($handle) {
@@ -114,6 +114,7 @@ function addColor($bar_array) {
 }
 
 //create and store the "cleaned" words mapped to their frequency
+set_time_limit(300);
 $counts = countCleaned();
 store_array("words.json", $counts);
 
