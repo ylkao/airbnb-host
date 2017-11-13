@@ -1,9 +1,36 @@
 # airbnb-host
-FILE ORGANIZATION
+SEE LIVE WEBSITE HERE: airbnb-host.herokuapp.com
 
 OVERVIEW
-
 I used JavaScript, Bootstrap, and PHP to create a website, Airbnb for Hosts, to visualize the data and perform price estimation, bookings optimization, and popularity calculations. I wrote several PHP scripts to process the data we were given and generate JSON files ready-for-use, so I wouldn't have to do the calculations every time the page loaded. I then used Bootstrap for the layout of the website and JavaScript to do animations, display the data as Google Charts, and process PHP forms and input.
+
+DELIVERABLES
+Visualize the data: see DATA section of website
+-Pie chart of Available Amenities: top 10 most listed amenities and their frequency
+-Bar chart of Most Frequently Used Words in Reviews: most used words and their frequency, excludes small and irrelevant words like "I", "a", "San Francisco", "room", etc.
+-Scatter plot of Number of People Accommodated vs, Price: number of people that can be accommodated given a certain listing and the listing's price in dollars 
+Price Estimation: see SERVICES section of website
+-Calculates the estimated weekly income by finding the nearest locations, multiplying price by number of reviews per week, and taking the average
+-Assumptions: number of reviews = number of bookings
+-One month = 4 weeks (divided reviews per month by 4 to get reviews/bookings per week)
+Bookings Optimization: see SERVICES section of website
+-Calculates the ideal price per night to maximize bookings by finding the nearest locations, multiplying price by number of reviews, and taking the average 
+-Assumptions: number of reviews = number of bookings
+-Reasoning: use nearby locations, the ones with the most number of bookings should be weighted more
+
+BONUS
+Animate:
+-see DATA section "carousel" of charts
+glyphicon images and service tool boxes slide in upon first loading the web page
+Investment: ​see DATA->BONUS subsection
+-Calculates the best place to invest $100 million using value (based off price and number of reviews) and estimated monthly income (similar to price estimation)
+-Assumption: median home price in San Francisco is $841,600
+Popularity: see DATA->BONUS subsection
+-Calculates the most popular neighborhood in San Francisco based off of review_ratings or the zipcode with the highest average rating
+-Note: ignored negligible amount of listings without a zipcode and single Chicago listing
+-Found the neighborhood based off of zipcode
+
+See more details below.
 
 BACK-END
 
