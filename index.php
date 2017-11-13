@@ -9,7 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link href="airbnbhost.css" rel="stylesheet">
+  <link href="css/airbnbhost.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="css/favicon.JPG" sizes="32x32" />
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -42,9 +43,9 @@ function getData($filename) {
 }
 
 //global variables for graphing data
-$scatter = getData("scatter.json");
-$amenities = getData("amenities.json");
-$reviews = getData("review_bar.json");
+$scatter = getData("data//price_people.json");
+$amenities = getData("data//amenities.json");
+$reviews = getData("data//reviews.json");
 
 ?>
 
@@ -56,7 +57,7 @@ $reviews = getData("review_bar.json");
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <a class="navbar-brand" href="#myPage">AIRBNB FOR HOSTS</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -90,9 +91,9 @@ $reviews = getData("review_bar.json");
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
+      <h2>About</h2><br>
       <h4>Hosting Airbnb guests in your home can be an easy way to make extra money. That's especially true in San Francisco, where finding an affordable hotel or hostel can be difficult. Here at Airbnb for Hosts, we want to help new hosts figure out how to set the perfect price for their home and capitalize on new trends.</h4><br>
-      <p>We offer a few tools to help you set up the perfect listing. View recent data of all listings in San Francisco with pricing, reviews, and more, including comparisons of the pricing of listings and number of people accommodated, the most offered amenities by hosts so far, and what people are looking for based on data collected from thousands of reviews. Also use our simple pricing tools to estimate the average weekly income you can make or calculate the ideal price per night to maximize bookings -- all you need is a geo-location!</p>
+      <p></p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-home logo" style="margin-left: 30%;"></span>
@@ -103,12 +104,11 @@ $reviews = getData("review_bar.json");
 <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-stats logo slideanim"></span>
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
     </div>
     <div class="col-sm-8">
-      <h2>HOW WE DO IT</h2><br>
-      <h4><strong>METHODS:</strong> To visualize the data, we relied on server-side PHP processing and the Google Charts API. To perform price estimation, we find the ten nearest listings to the given geo-location and average their prices. We also take into account a location's number of reviews when determining how to maximize bookings.</h4><br>
-      <p><strong>NOTE:</strong> For a more detailed description of the implementation, please feel free to take a look at the source code and read more <a href="https://github.com/ylkao/airbnb-host.git">here.</a></p>
+      <h2>FEATURES</h2><br>
+      <h4>We offer a few tools to help you set up the perfect listing. View recent data of all listings in San Francisco with pricing, reviews, and more, including comparisons of the pricing of listings and number of people accommodated, the most offered amenities by hosts so far, and what people are looking for based on data collected from thousands of reviews. To use our price estimation and bookings optimization tools, simply enter a geo-location and we'll do the rest!</p><br><br><p><strong>NOTE:</strong> For a more detailed description of our methods and website implementation, please feel free to take a look at the source code and read more <a href="https://github.com/ylkao/airbnb-host.git">here.</a></p>
     </div>
   </div>
 </div>
@@ -163,12 +163,13 @@ $reviews = getData("review_bar.json");
             google.charts.setOnLoadCallback(drawChart);
 
             var bar = <?php echo json_encode($reviews); ?>;
+            bar[0] = ["Word", "Frequency", { role: "style" } ];
             function drawChart() {
 
               var data = google.visualization.arrayToDataTable(bar);
 
               var view = new google.visualization.DataView(data);
-              view.setColumns([0, 1]);
+              view.setColumns([0, 1, 2]);
 
               var options = {
                 title: "Most Frequently Used Words in Reviews",
@@ -199,7 +200,8 @@ $reviews = getData("review_bar.json");
           vAxis: {title: 'Price in Dollars', minValue: 0, maxValue: 1100},
           width: 800,
           height: 500,
-          legend: 'none'
+          legend: 'none',
+          colors: ["#FF5A5F"]
         };
 
         var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
@@ -248,14 +250,33 @@ $reviews = getData("review_bar.json");
   </div>
 </div>
 
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-stats logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2><strong>VISUALIZATION:</strong></h2><h4> We searched through over 8500+ Airbnb listings in San Francisco to collect information on prices, amenities, reviews, and more to generate the relevant data. We hope these charts of our findings help you make the perfect Airbnb listing!</h4>
+      <ul>
+      <li><strong>AVAILABLE AMENITIES: </strong>Take a look at the top 10 amenities provided by Airbnb hosts in San Francisco.</li>
+      <li><strong>MOST FREQUENTLY USED WORDS IN REVIEWS: </strong>Learn about what guests notice the most about their stay, and use that information to make the most out of your home.</li>
+      <li><strong>NUMBER OF PEOPLE ACCOMMODATED VS. PRICE: </strong>Unsure how to price your home? See what other hosts are doing based off of the number of people that can be accommodated per listing.</li>
+      </ul><br><br>
+      <h2><strong>SOURCE: </strong></h2><h4>Official data collected from all public Airbnb listings in San Francisco.</h4><br>
+      
+    </div>
+  </div>
+</div>
+
+
 <div id="slide3" class="thirdSplash">
-  <h1 class="third-title noselect">Try out our services</h1>
+  <h1 class="third-title noselect">Browse a location</h1>
 </div>
 
 
 <div id="services" class="container-fluid text-center">
   <h2>Services</h2><br>
-  <h4>What we offer</h4>
+  <h4>What we can do for you</h4>
 </div>
 
 <!-- Container (Pricing Section) -->
@@ -290,7 +311,7 @@ $reviews = getData("review_bar.json");
             };
             var lat = document.getElementById("lat").value;
             var lon = document.getElementById("lon").value;
-            xhttp.open("GET", "weeklyIncome.php?lat="+lat+"&lon="+lon, true);
+            xhttp.open("GET", "price_estimation.php?lat="+lat+"&lon="+lon, true);
             xhttp.send();
           }
 
@@ -325,7 +346,7 @@ $reviews = getData("review_bar.json");
               }
             };
             var zip = document.getElementById("zipcode").value;
-            xhttp.open("GET", "calcPopularity.php?zipcode="+zip, true);
+            xhttp.open("GET", "calc_popularity.php?zipcode="+zip, true);
             xhttp.send();
           }
 
@@ -361,7 +382,7 @@ $reviews = getData("review_bar.json");
             };
             var lat = document.getElementById("lat2").value;
             var lon = document.getElementById("lon2").value;
-            xhttp.open("GET", "optimalPrice.php?lat="+lat+"&lon="+lon, true);
+            xhttp.open("GET", "bookings_optimization.php?lat="+lat+"&lon="+lon, true);
             xhttp.send();
           }
           
@@ -374,7 +395,7 @@ $reviews = getData("review_bar.json");
   </div>
 </div>
 
-
+ 
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
 <script>
@@ -484,9 +505,14 @@ $reviews = getData("review_bar.json");
           <script> 
           /* Clear contact form when pressing send */
             function clearForm() {
-              document.getElementById("name").value = '';
-              document.getElementById("email").value = '';
-              document.getElementById("comments").value = '';
+              if (document.getElementById("name").value != "" && document.getElementById("name").value != "" && document.getElementById("name").value != "") { 
+                  document.getElementById("name").value = '';
+                  document.getElementById("email").value = '';
+                  document.getElementById("comments").value = '';
+                  alert("Thank you for your feedback!");
+              } else {
+                alert("Please fill out all fields.");
+              }
             }
           </script>
         </div>
