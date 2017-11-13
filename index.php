@@ -261,8 +261,14 @@ $reviews = getData("data//reviews.json");
       <li><strong>AVAILABLE AMENITIES: </strong>Take a look at the top 10 amenities provided by Airbnb hosts in San Francisco.</li>
       <li><strong>MOST FREQUENTLY USED WORDS IN REVIEWS: </strong>Learn about what guests notice the most about their stay, and use that information to make the most out of your home.</li>
       <li><strong>NUMBER OF PEOPLE ACCOMMODATED VS. PRICE: </strong>Unsure how to price your home? See what other hosts are doing based off of the number of people that can be accommodated per listing.</li>
-      </ul><br><br>
-      <h2><strong>SOURCE: </strong></h2><h4>Official data collected from all public Airbnb listings in San Francisco.</h4><br>
+      </ul><br>
+      <!--<h2><strong>SOURCE: </strong></h2><h4>Official data collected from all public Airbnb listings in San Francisco.</h4><br>-->
+      <h2><strong>BONUS: </strong></h2>
+      <ul>
+      <li><strong>INVESTMENT: </strong>Given $100 million to invest, you should buy properties in Potrero Hill. If you assume the median home price in SF is $841,600, you can buy about 119 properties in that area. Based on the weekly income tool (modified for months), you will break even after approximately 1683 months. 
+      <li><strong>POPULARITY: </strong>The most popular neighborhood is the Financial District (zipcode: 94104) with an average rating of 97.33.</li>
+      </ul><br>
+      <h4>If you'd like to learn more about these calculations, please read more <a href="https://github.com/ylkao/airbnb-host.git">here!</a></h4<br>
       
     </div>
   </div>
@@ -326,10 +332,10 @@ $reviews = getData("data//reviews.json");
           <h1>Popularity</h1>
         </div>
         <div class="panel-body">
-          <p>Enter a valid zipcode in San Francisco to see its average rating! <br><strong>BONUS:</strong> The most popular neighborhood is the Financial District (zipcode: 94104) with an average rating of 97.33.</p>
+          <p>Enter a valid zipcode in San Francisco to see its average rating! <br><br><!--<strong>BONUS:</strong> The most popular neighborhood is the Financial District (zipcode: 94104) with an average rating of 97.33.</p>-->
         </div>
         <div class="panel-footer"><br>
-          <input class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode" required>
+          <input class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode" required><br>
           <button class="btn btn-lg" id="popularity" type="submit" onclick="calcPopularity()">See Average Rating</button>
 
           <p id="popularity_result"></p>
