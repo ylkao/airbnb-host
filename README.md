@@ -2,7 +2,7 @@
 SEE LIVE WEBSITE HERE: airbnb-host.herokuapp.com
 
 OVERVIEW <br />
-I used JavaScript, Bootstrap, and PHP to create a website, Airbnb for Hosts, to visualize the data and perform price estimation, bookings optimization, and popularity calculations. I wrote several PHP scripts to process the data we were given and generate JSON files ready-for-use, so I wouldn't have to do the calculations every time the page loaded. I then used Bootstrap for the layout of the website and JavaScript to do animations, display the data as Google Charts, and process PHP forms and input.
+Winner of Capital One's Software Engineering Summit Challenge (Fall 2017). Created a web application to help new Airbnb hosts in San Francisco figure out how to set the perfect price for their home and capitalize on new trends. The website visualizes public data from Airbnb that contains all the listings in San Francisco with pricing, reviews, and date availability. I used JavaScript, Bootstrap, and PHP to create the website, Airbnb for Hosts, to visualize the data and perform price estimation, bookings optimization, and popularity calculations. I wrote several PHP scripts to process the data we were given and generate JSON files ready-for-use, so I wouldn't have to do the calculations every time the page loaded. I then used Bootstrap for the layout of the website and JavaScript to do animations, display the data as Google Charts, and process PHP forms and input.
 
 DELIVERABLES <br />
 1. Visualize the data: see DATA section of website 
